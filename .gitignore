@@ -8,8 +8,8 @@ __pycache__/
 
 #DEM data files
 #put them in a compressed folder
-.tif
-.JP2
+*.tif
+*.JP2
 
 # Distribution / packaging
 .Python
