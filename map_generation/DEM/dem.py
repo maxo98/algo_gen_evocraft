@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib 
 import matplotlib.pyplot as plt
 
-filename = "ldac_50n_3000m.jp2"
+filename = "ldem_64.tif"
 gdal_data = gdal.Open(filename, gdal.GA_ReadOnly)
 
 gdal_band = gdal_data.GetRasterBand(1)
