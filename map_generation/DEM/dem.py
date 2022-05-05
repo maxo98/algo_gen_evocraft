@@ -1,8 +1,15 @@
+import grpc
 from osgeo import gdal
 from osgeo import gdal_array
 import numpy as np
 import matplotlib 
 import matplotlib.pyplot as plt
+
+import minecraft_pb2_grpc
+from minecraft_pb2 import *
+
+channel = grpc.insecure_channel('localhost:5001')
+client = minecraft_pb2_grpc.MinecraftServiceStub(channel)
 
 filename = "ldem_64.tif"
 gdal_data = gdal.Open(filename, gdal.GA_ReadOnly)
@@ -41,7 +48,8 @@ gdal_band.GetMetadata()
 
 # Print only selected metadata:
 print ("[ NO DATA VALUE ] = ", gdal_band.GetNoDataValue()) # none
-print ("[ MIN ] = ", gdal_band.GetMinimum())
+minimum =  gdal_band.GetMinimum()
+print("[ MIN ] = ", minimum)
 print ("[ MAX ] = ", gdal_band.GetMaximum())
 
 print("done 1")
@@ -62,10 +70,56 @@ for b in range(gdal_data.RasterCount):
 
 plt.imshow(image[:, :, gdal_data.RasterCount-1])
 plt.colorbar()
-plt.show()
+#plt.show()
 
 print("done 2")
 
+def clear_map():
+    client.fillCube(FillCubeRequest(
+        cube=Cube(
+            min=Point(x=0, y=0, z=0),
+            max=Point(x=500, y=128, z=500)
+        ),
+        type=AIR
+    ))
+
+def spawn_map():
+    _blocks = []
+    print(len(image))
+    print(len(image[0]))
+    for x in range(100):
+        for y in range(100):
+            _blocks.append(Block(position=Point(x=x, y=int(image[x*10][y*10] - minimum) , z=y), type=STONEBRICK))
+            _blocks.append(Block(position=Point(x=x, y=int(image[x*10][y*10] - minimum) -1 , z=y), type=STONEBRICK))
+
+    client.spawnBlocks(Blocks(blocks=_blocks))
+    _blocks.clear()
+    for x in range(100, 200):
+        for y in range(100):
+            _blocks.append(Block(position=Point(x=x, y=int(image[x*10][y*10] - minimum) , z=y), type=DIAMOND_BLOCK))
+            _blocks.append(Block(position=Point(x=x, y=int(image[x*10][y*10] - minimum) -1 , z=y), type=DIAMOND_BLOCK))
+
+    client.spawnBlocks(Blocks(blocks=_blocks))
+    _blocks.clear()
+    for x in range(100):
+        for y in range(100,200):
+            _blocks.append(Block(position=Point(x=x, y=int(image[x * 10][y * 10] - minimum), z=y), type=DIAMOND_BLOCK))
+            _blocks.append(
+                Block(position=Point(x=x, y=int(image[x * 10][y * 10] - minimum) - 1, z=y), type=DIAMOND_BLOCK))
+
+    client.spawnBlocks(Blocks(blocks=_blocks))
+    _blocks.clear()
+    for x in range(100, 200):
+        for y in range(100, 200):
+            _blocks.append(Block(position=Point(x=x, y=int(image[x * 10][y * 10] - minimum), z=y), type=STONEBRICK))
+            _blocks.append(
+                Block(position=Point(x=x, y=int(image[x * 10][y * 10] - minimum) - 1, z=y), type=STONEBRICK))
+
+    client.spawnBlocks(Blocks(blocks=_blocks))
+
+clear_map()
+spawn_map()
+print("done")
 #To free the data
 #gdal_data = None
 #gdal_band = None
