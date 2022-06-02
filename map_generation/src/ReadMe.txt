@@ -12,3 +12,6 @@ J'ai pris quelque notes sur les maps téléchargé dans Map.txt
 
 Téléchagé les maps
 https://drive.google.com/file/d/1o9CZGPCXEsVTgsLDTTYFi8vUCbSnvIvd/view?usp=sharing
+
+Launch minecraft server
+java -Xmx1024M -Xms1024M -jar spongevanilla-1.12.2-7.3.0.jar

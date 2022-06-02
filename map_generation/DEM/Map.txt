@@ -1,3 +1,0 @@
-SLDEM2015_128_60S_60N_000_360.JP2 - Monté jusqu'à 11.8Go de Ram lors du chargement
-ldem_64.tif - Très rapide à chargé, c'est une height map qui peut s'appliquer sur un modèle 3D
-Lunar_LRO_LOLA_ClrShade_Global_64ppd_BlueSteel.tif - Se charge vite, possède 2 couche, semble plus précise
