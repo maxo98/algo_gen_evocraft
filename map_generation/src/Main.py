@@ -34,25 +34,25 @@ def color_to_block(color):
     if color[0] < 128:
         if color[1] < 128:
             if color[2] < 128:
-                return BLACK_SHULKER_BOX
+                return OBSIDIAN
             else:
-                return BLUE_SHULKER_BOX
+                return LAPIS_BLOCK
         else:
             if color[2] < 128:
-                return GREEN_SHULKER_BOX
+                return EMERALD_BLOCK
             else:
-                return CYAN_SHULKER_BOX
+                return PACKED_ICE
     else:
         if color[1] < 128:
             if color[2] < 128:
-                return RED_SHULKER_BOX
+                return REDSTONE_BLOCK
             else:
-                return YELLOW_SHULKER_BOX
+                return GOLD_BLOCK
         else:
             if color[2] < 128:
-                return PURPLE_SHULKER_BOX
+                return PINK_GLAZED_TERRACOTTA
             else:
-                return WHITE_SHULKER_BOX
+                return WOOL
 
 
 def color_to_height(color):
