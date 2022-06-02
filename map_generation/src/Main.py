@@ -5,6 +5,7 @@ from osgeo import gdal
 from osgeo import gdal_array
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 import minecraft_pb2_grpc
 from minecraft_pb2 import *
@@ -84,9 +85,17 @@ def spawn_height_map():
     client.spawnBlocks(Blocks(blocks=_blocks))
 
 
+if(len(sys.argv) < 2):
+    exit()
+
 clear_map()
-filename = input('image name : ')
-image_type = input('type d\'image : ')
+filename = sys.argv[1]
+
+image_type = ""
+
+if(len(sys.argv) > 2):
+    image_type = sys.argv[2]
+
 init_img()
 if image_type == 'rgb':
     spawn_map()

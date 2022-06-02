@@ -1,0 +1,4 @@
+<samples>
+	<overlapping name="Platformer" N="3" periodic="False" rotations="0" />
+	<simpletiled name="Knots" subset="Crossless" width="24" height="24"/>
+</samples>
