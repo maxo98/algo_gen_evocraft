@@ -1,0 +1,2 @@
+filename	tile_size	pattern_width	rotations	output_size	ground	attempt_limit	output_periodic	input_periodic	location heuristic	choice heuristic	global constraint	backtracking	attempts	time_start	time_adjacency	adjacency_duration	time solve start	time solve end	solve duration	pattern count	choices	wave	backtracks	propagations	outcome	
+Colored_City	1	4	7	(48, 48)	0	10	False	False	entropy	weighted	False	False	1	1660268.4897387	1660280.5056563	0.0028467997908592224	1660280.5085031	1660296.7215292	16.213026100071147	243	38	38	0	76	success	
