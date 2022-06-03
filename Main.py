@@ -60,7 +60,11 @@ if wfc == "true":
 
     os.system('python ./wfc_2019f-master/wfc_run.py -s ' + xml)
 
-list_of_files = glob.glob('./output/*.png')
-latest_file = max(list_of_files, key=os.path.getctime)
+if wfc == "true" or image == "":
+    list_of_files = glob.glob('./output/*.png')
+    latest_file = max(list_of_files, key=os.path.getctime)
+else:
+    latest_file = "./output/" + image
+
 
 os.system('python ./map_generation/src/Main.py ' + latest_file + " " + rgb)

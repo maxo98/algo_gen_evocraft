@@ -1,0 +1,8 @@
+filename	tile_size	pattern_width	rotations	output_size	ground	attempt_limit	output_periodic	input_periodic	location heuristic	choice heuristic	global constraint	backtracking	attempts	time_start	time_adjacency	adjacency_duration	time solve start	time solve end	solve duration	pattern count	choices	wave	backtracks	propagations	outcome	
+flowers	1	4	1	(48, 48)	-1	10	False	False	entropy	weighted	False	False	1	1668039.9412976	1675560.2079583	0.003963200142607093	1675560.2119215	None	0.5831341999582946	284	0	0	0	1	contradiction	
+flowers	1	4	1	(48, 48)	-1	10	False	False	entropy	weighted	False	False	2	1668039.9412976	1675560.2079583	0.5879502000752836	1675560.7959085	None	0.5889836999122053	284	0	0	0	2	contradiction	
+flowers	1	4	1	(48, 48)	-1	10	False	False	entropy	weighted	False	False	3	1668039.9412976	1675560.2079583	1.1840310001280159	1675561.3919893	None	0.5812351000495255	284	0	0	0	3	contradiction	
+flowers	1	4	1	(48, 48)	-1	10	False	False	entropy	weighted	False	False	4	1668039.9412976	1675560.2079583	1.765741600189358	1675561.9736999	None	0.5896131999325007	284	0	0	0	4	contradiction	
+flowers	1	4	1	(48, 48)	-1	10	False	False	entropy	weighted	False	False	5	1668039.9412976	1675560.2079583	2.3560421001166105	1675562.5640004	None	0.5904727000743151	284	0	0	0	5	contradiction	
+flowers	1	4	1	(48, 48)	-1	10	False	False	entropy	weighted	False	False	6	1668039.9412976	1675560.2079583	2.947055800119415	1675563.1550141	None	0.5816623000428081	284	0	0	0	6	contradiction	
+flowers	1	4	1	(48, 48)	-1	10	False	False	entropy	weighted	False	False	7	1668039.9412976	1675560.2079583	3.529403200140223	1675563.7373615	None	0.5169009000528604	284	
